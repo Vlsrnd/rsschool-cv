@@ -1,0 +1,1 @@
+<p align="center">https://vlsrnd.github.io/rsschool-cv/cv</p>
