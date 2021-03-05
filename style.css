@@ -1,10 +1,16 @@
 html {
   scroll-behavior: smooth;
 }
-body, html, h2, h3, h4 {
+body, html, h2, h3, h4, ul {
   margin: 0;
   padding: 0;
   font-family: monospace;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 body {
   background-color: #777;
@@ -20,29 +26,51 @@ body a {
   grid-row: 1fr auto;
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 header {
   position: fixed;
-  top: 0;
+  top: -50px;
   left: 0;
   right: 0;
   height: 50px;
   box-shadow: 0 2px 4px #000;
   background-color: #555;
+  transition: top .2s ease-in;
+}
+header::before,
+header::after {
+  content: '↓';
+  text-align: center;
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  top: 49px;
+  left: 20%;
+  background-color: #333;
+  border-bottom-right-radius: 99em ;
+  border-bottom-left-radius: 99em ;
+}
+header::after {
+  left: auto;
+  right: 20%;
+}
+header:hover {
+  top: 0;
 }
 header ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  user-select: none;
 }
 header a {
-  color: black;
+  color: #f5f5dc;
+  font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
 }
 main {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
 }
@@ -54,12 +82,22 @@ main>img {
   border: 1px solid #555;
 }
 .resume-section {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 20px;
 }
+.contacts {
+
+}
 footer {
-  border: 1px solid blue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.3em;
+  box-shadow: 0 -2px 4px #333;
+}
+footer img {
+  height: 50px;
+  width: auto;
 }
