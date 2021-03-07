@@ -1,1 +1,1 @@
-<p align="center">https://vlsrnd.github.io/rsschool-cv/cv</p>
+<p align="center">https://vlsrnd.github.io/rsschool-cv</p>
