@@ -21,48 +21,69 @@ a:hover {
 body {
   width: 100%;
   min-height: 100vh;
-  display: grid;
-  grid-template-areas: 
-    "main main"
-    "footer footer";
-  grid-template-rows: 1fr auto;
-  grid-template-columns: auto 1fr;
   background-color: #777;
   color: #f5f5dc;
   font-size: 16px;
 }
-header {
-  grid-area: header;
-  box-shadow: 0 2px 2px #000;
-  background-color: #555;
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
 }
-nav {
+aside {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -150px;
   bottom: 0;
   width: 150px;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  transition: left .2s ease-in;
+  background-color: #333;
+}
+aside a {
+  color: #f5f5dc;
+}
+aside::before {
+  content: '>';
+  position: absolute;
+  left: calc(100% - 1px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 0 99em 99em 0;
+  background-color: #333;
+}
+aside:hover {
+  left: 0;
 }
 nav li {
   margin-top: 20px;
 }
 
-main {
-  grid-area: main;
-  padding: 0 20px 20px 170px;
+.resume {
+  padding: 10px 20px 20px 10px;
   display: flex;
   flex-direction: column;
 }
-main img {
+.resume h1 {
+  text-align: center;
+}
+.resume img {
   width: 150px;
   height: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 .resume-section {
   padding-bottom: 20px;
   border-bottom: 1px dotted #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .resume-section:last-child {
   border-bottom: none;
@@ -70,8 +91,14 @@ main img {
 .resume-section h3 {
   color: #000;
 }
+.employment {
+  max-width: 400px;
+}
+.employment h4,
+.employment__date {
+  color: black;
+}
 footer {
-  grid-area: footer;
   padding: 5px;
   display: flex;
   justify-content: space-around;
